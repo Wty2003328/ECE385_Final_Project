@@ -30,7 +30,8 @@ module man(
     input   logic   [15:0]   keycode,
     
     output  logic   [9:0]   ManX, ManY,
-    output  logic   [3:0]   Man_Red, Man_Green, Man_Blue
+    output  logic   [3:0]   Man_Red, Man_Green, Man_Blue,
+    output  logic   Jump_sound
     );
     logic [31:0] man_alive_right_data,man_alive_left_data,man_dead_data;
     logic [5:0] man_addr;
@@ -245,6 +246,7 @@ module man(
             ManX <= Man_X_Center;
             jumping<=1'b0;
             towards_left<=1'b0;
+            Jump_sound <=1'b0;
         end 
         else if(Win==1||Dead==1)
         begin
@@ -264,29 +266,39 @@ module man(
             if ((keycode_1 == 8'h1A||keycode_2 == 8'h1A) && jumping==1'b0 && on_ground==1) begin  // W
                 jumping=1'b1;
                 jumping_frame_count=5'd0;
+                Jump_sound = 1'd1;
             end
             
             if(jumping==1'b1) begin
                 if(jumping_frame_count<9'd20) begin
                     Man_Y_Motion_next =-10'd4;
+                    
                 end
                 else if(jumping_frame_count<9'd30) begin
                     Man_Y_Motion_next =-10'd3;
+
                 end
                 else if(jumping_frame_count<9'd45) begin
                     Man_Y_Motion_next =10'd0;
+
                 end
                 else if(jumping_frame_count<9'd60) begin
                     Man_Y_Motion_next =10'd1;
-                end
-                else if(on_ground==1||wall_above==1) begin
-                    jumping<=1'b0;
+                    Jump_sound = 1'd0;
                 end
                 else begin
-                   jumping<=1'b0;
+                if (on_ground || wall_above) begin
+                    jumping = 1'b0;
+                    Jump_sound = 1'b0;  // Reset Jump_sound signal when landing or hitting an obstacle
                 end
-                jumping_frame_count<=jumping_frame_count+1;        
             end
+            jumping_frame_count <= jumping_frame_count + 1;
+        end
+        else begin
+            Jump_sound = 1'b0;  // Ensure Jump_sound is off when not jumping
+        end
+
+
             
             if((keycode_1 == 8'h07&&keycode_2 == 8'h04)||(keycode_2 == 8'h07&&keycode_1 == 8'h04))
             begin
