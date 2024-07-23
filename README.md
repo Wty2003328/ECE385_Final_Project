@@ -1,4 +1,4 @@
-# ECE385_Final_Project @ UIUC 24SP by Tianyang Wu, Yue Shi
+## ECE385_Final_Project @ UIUC 24SP by Tianyang Wu,Yue Shi
 
 [Tianyang Wu](mailto:tw42@illinois.edu), [Yue Shi](mailto:yueshi6@illinois.edu) | ECE385: Digital Systems Laboratory, Spring 2023 <br>
 Instructor: [Zuofu Cheng](https://ece.illinois.edu/about/directory/faculty/zcheng1) @ University of Illinois at Urbana-Champaign
