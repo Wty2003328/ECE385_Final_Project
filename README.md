@@ -1,6 +1,11 @@
-# ECE385_Final_Project
+# ECE385_Final_Project @ UIUC 24SP by Tianyang Wu, Yue Shi
 
-Vivado project is available at [google_drive_final_project](https://drive.google.com/file/d/12XlaXhhVKMfCb2HvjN_2XXG338i9jujv/view?usp=sharing)
+[Tianyang Wu](mailto:tw42@illinois.edu), [Yue Shi](mailto:yueshi6@illinois.edu) | ECE385: Digital Systems Laboratory, Spring 2023 <br>
+Instructor: [Zuofu Cheng](https://ece.illinois.edu/about/directory/faculty/zcheng1) @ University of Illinois at Urbana-Champaign
+
+
+This is the final project repo of out team. We simulated the game "I wanna be the guy" and was honored to be selected to present on [final project showcase](https://www.youtube.com/playlist?list=PL9Y3OlwmxeCHpM6jNuV851Ay8sjVK7W24). Documents including proposal and report is in [doc folder](/doc/) and
+Vivado project is available at [google_drive_final_project](https://drive.google.com/file/d/12XlaXhhVKMfCb2HvjN_2XXG338i9jujv/view?usp=sharing).
 
 
 ACADEMIC INTEGRITY
